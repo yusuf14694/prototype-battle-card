@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cy8i2eawt0o84"]
+
+[ext_resource type="Script" uid="uid://byud711b80vj3" path="res://scripts/CardData.gd" id="1_k05uu"]
+
+[resource]
+script = ExtResource("1_k05uu")
+card_name = "Slash"
+damage = 6
+cost = 1
+description = "You Deal 6 Damage to enemy"
+metadata/_custom_type_script = "uid://byud711b80vj3"

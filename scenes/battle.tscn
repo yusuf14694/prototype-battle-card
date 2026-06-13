@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://boh5bgdbglket"]
+
+[ext_resource type="Texture2D" uid="uid://5vsuefvifk0" path="res://resources/craftpix-net-597821-free-pixel-art-abandoned-places-background-collection/background 2/orig.png" id="1_ip7xm"]
+[ext_resource type="Script" uid="uid://drmxa8ahsbpu1" path="res://scripts/battle_manager.gd" id="1_lpir7"]
+[ext_resource type="PackedScene" uid="uid://dxx62ugsii7wj" path="res://scenes/player.tscn" id="2_oxp8w"]
+[ext_resource type="PackedScene" uid="uid://ci2g34517nb5r" path="res://scenes/zombie.tscn" id="3_7sfm4"]
+
+[node name="Battle" type="Node2D" unique_id=1186709085 groups=["battle_manager"]]
+script = ExtResource("1_lpir7")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1840734839]
+position = Vector2(579, 325)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ip7xm")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=1074905105 groups=["player"] instance=ExtResource("2_oxp8w")]
+position = Vector2(355, 479)
+scale = Vector2(2, 2)
+
+[node name="Zombie" parent="." unique_id=292405225 groups=["enemy"] instance=ExtResource("3_7sfm4")]
+position = Vector2(781.00006, 440)
+scale = Vector2(2.5, 2.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1973285713]
+
+[node name="BattleUI" type="Control" parent="CanvasLayer" unique_id=785190347]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="VBoxContainer" parent="CanvasLayer/BattleUI" unique_id=297272666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandContainer" type="HBoxContainer" parent="CanvasLayer/BattleUI/CenterContainer" unique_id=1835438398]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ExecuteButton" type="Button" parent="CanvasLayer/BattleUI" unique_id=1629356945]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.0
+offset_top = 265.0
+offset_right = 99.0
+offset_bottom = 310.0
+grow_horizontal = 2
+text = "Action!"
+
+[connection signal="pressed" from="CanvasLayer/BattleUI/ExecuteButton" to="." method="_on_execute_button_pressed"]

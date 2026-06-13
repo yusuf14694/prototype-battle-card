@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dtqhy8t36hiet"]
+
+[ext_resource type="Script" uid="uid://dwdkh56d07a12" path="res://scenes/card_ui.gd" id="1_e1hm3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1hm3"]
+
+[node name="CardUIPanel" type="Panel" unique_id=160171450]
+custom_minimum_size = Vector2(180, 240)
+offset_right = 180.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e1hm3")
+script = ExtResource("1_e1hm3")
+metadata/_edit_group_ = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=818151426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=458563480]
+custom_minimum_size = Vector2(164, 244)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 172.0
+offset_bottom = 252.0
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=2141195215]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="CostLabel" type="Label" parent="VBoxContainer" unique_id=1453495201]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="VBoxContainer" unique_id=952762624]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 2
+autowrap_mode = 3

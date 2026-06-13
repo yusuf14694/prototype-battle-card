@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://boh5bgdbglket"]
+
+[ext_resource type="Texture2D" uid="uid://5vsuefvifk0" path="res://resources/craftpix-net-597821-free-pixel-art-abandoned-places-background-collection/background 2/orig.png" id="1_ip7xm"]
+[ext_resource type="PackedScene" uid="uid://dxx62ugsii7wj" path="res://scenes/player.tscn" id="2_oxp8w"]
+[ext_resource type="PackedScene" uid="uid://ci2g34517nb5r" path="res://scenes/zombie.tscn" id="3_7sfm4"]
+[ext_resource type="Script" uid="uid://c6ualx8h053cq" path="res://scripts/battle_ui.gd" id="4_i431l"]
+
+[node name="Battle" type="Node2D" unique_id=1186709085]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1840734839]
+position = Vector2(579, 325)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ip7xm")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=1074905105 groups=["player"] instance=ExtResource("2_oxp8w")]
+position = Vector2(355, 479)
+scale = Vector2(2, 2)
+
+[node name="Zombie" parent="." unique_id=292405225 groups=["enemy"] instance=ExtResource("3_7sfm4")]
+position = Vector2(781.00006, 440)
+scale = Vector2(2.5, 2.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1973285713]
+
+[node name="BattleUI" type="Control" parent="CanvasLayer" unique_id=785190347]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 211.0
+script = ExtResource("4_i431l")
+
+[node name="HandContainer" type="HBoxContainer" parent="CanvasLayer/BattleUI" unique_id=1835438398]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 3.0
+offset_right = 993.0
+offset_bottom = 174.0
