@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_i48d3")
-card_name = "Block"
+card_name = "Guard"
 block = 1
 cost = 2
 description = "Reduce incoming attack damage"

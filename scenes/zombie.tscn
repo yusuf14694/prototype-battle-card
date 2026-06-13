@@ -2,7 +2,28 @@
 
 [ext_resource type="Script" uid="uid://bwi1umwi5lq37" path="res://scripts/zombie.gd" id="1_roy8y"]
 [ext_resource type="Texture2D" uid="uid://cxx3nylfbto3o" path="res://resources/craftpix-net-503404-free-urban-zombie-sprite-sheet-pixel-art-pack/Zombie_1/Idle.png" id="1_uiaus"]
+[ext_resource type="Texture2D" uid="uid://dflc7x6s3ulnl" path="res://resources/craftpix-net-503404-free-urban-zombie-sprite-sheet-pixel-art-pack/Zombie_1/Attack.png" id="2_4gx57"]
 [ext_resource type="Texture2D" uid="uid://cc7m42togf4ux" path="res://resources/craftpix-net-503404-free-urban-zombie-sprite-sheet-pixel-art-pack/Zombie_1/Hurt.png" id="2_jmu02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycv6i"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjjxt"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pfmu"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fthk"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aetfh"]
+atlas = ExtResource("2_4gx57")
+region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
 atlas = ExtResource("2_jmu02")
@@ -46,6 +67,26 @@ region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_050lg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycv6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjjxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pfmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fthk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aetfh")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ogcpr")
@@ -97,8 +138,9 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2DZombie" type="AnimatedSprite2D" parent="." unique_id=1803320479]
 sprite_frames = SubResource("SpriteFrames_050lg")
-animation = &"idle"
-frame_progress = 0.6243192
+animation = &"attack"
+frame = 4
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1609551877]
